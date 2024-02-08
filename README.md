@@ -1,12 +1,20 @@
-# Docker 搭建幻兽帕鲁 arm 服务
+# Palworld Server for ARM macinhes
 
-## 使用方法
+## Build this image
 
-   ```bash
-   git clone https://github.com/zion-c/palworld-server-arm64.git
-   cd palworld-server-arm64
-   docker compose up -d
-   ```
-注意打开 8211(UDP)、25575端口
+```
+git clone https://github.com/MisakaMikoto-35c5/palworld-server-arm64
+cd palworld-server-arm64
+docker build --tag palworld-server .
+```
 
-配置文件位于 data/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+## Create Server
+
+```
+docker create -t \
+   --name palworld-server \
+   -p 8211:8211/udp \
+   -p 25575:25575/tcp \
+   -v /var/data/palworld:/var/data/palworld:/home/steam/Steam/steamapps/common/PalServer \
+   palworld-server
+```
