@@ -86,4 +86,4 @@ mkdir -p /home/steam/.steam/sdk64/
 
 chmod -R 777 /home/steam/Steam
 
-chmod -R steam:steam /home/steam
+chown -R steam:steam /home/steam
