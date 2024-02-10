@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sed -i 's/ports.ubuntu.com/10.0.2.1/g' /etc/apt/sources.list
-
 # Install necessary dependencies
 apt-get update && \
     apt-get install -y \
