@@ -1,7 +1,7 @@
 #!/usr/bin/expect -f
 
 set timeout -1
-
+#./steamcmd.sh +login anonymous +app_update 1007 +app_update 2394010 +quit
 spawn FEXBash ./steamcmd.sh
 
 expect "Steam>"
@@ -19,5 +19,7 @@ send "app_update 1007 validate\r"
 expect "Steam>"
 
 send "quit\r"
+
+ln -s ~/Steam/steamapps/common/PalServer ~/PalServer
 
 expect eof

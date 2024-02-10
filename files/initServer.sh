@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 cd /home/steam/Steam
-./auto_install.exp
+
+chown steam:steam /home/steam/Steam/steamapps/
+su steam -c './auto_install.sh'
 cp ~/Steam/steamapps/common/Steamworks\ SDK\ Redist/linux64/steamclient.so ~/.steam/sdk64/
-FEXBash ~/Steam/steamapps/common/PalServer/PalServer.sh
+su steam -c 'FEXBash ~/Steam/steamapps/common/PalServer/PalServer.sh'

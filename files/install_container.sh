@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i 's/ports.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+sed -i 's/ports.ubuntu.com/10.0.2.1/g' /etc/apt/sources.list
 
 # Install necessary dependencies
 apt-get update && \
@@ -78,11 +78,13 @@ apt install expect
 
 mv /tmp/files/initServer.sh /home/steam/Steam/initServer.sh
 mv /tmp/files/auto_install.exp /home/steam/Steam/auto_install.exp
+mv /tmp/files/auto_install.sh /home/steam/Steam/auto_install.sh
 
-chmod +x /home/steam/Steam/initServer.sh
+chmod +x /home/steam/Steam/*.sh
 chmod +x /home/steam/Steam/auto_install.exp
 mkdir -p /home/steam/Steam/steamapps/common/PalServer
 mkdir -p /home/steam/.steam/sdk64/
+mkdir -p /home/steam/PalServer
 
 chmod -R 777 /home/steam/Steam
 

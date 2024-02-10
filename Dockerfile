@@ -11,7 +11,6 @@ COPY ./files /tmp/files
 
 RUN chmod a+x /tmp/files/*.sh && \
     /tmp/files/install_container.sh && \
-    rm -rf /tmp/* && \
-    rm -rf /var/cache/apt/*
+    /tmp/files/cleanup.sh
 
-ENTRYPOINT /home/steam/Steam/initServer.sh
+CMD /home/steam/Steam/initServer.sh
