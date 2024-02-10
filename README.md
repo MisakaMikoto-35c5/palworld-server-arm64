@@ -15,6 +15,6 @@ docker create -t \
    --name palworld-server \
    -p 8211:8211/udp \
    -p 25575:25575/tcp \
-   -v /var/data/palworld:/var/data/palworld:/home/steam/Steam/steamapps/common/PalServer \
+   -v /var/data/palworld:/home/steam/Steam/steamapps \
    palworld-server
 ```
